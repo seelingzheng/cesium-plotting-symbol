@@ -52,7 +52,7 @@ function setupPropEditor() {
 
 onMounted(() => {
   Cesium.Ion.defaultAccessToken =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxNWY5YzhhMS05ZmYxLTQ5NzgtOTcwNC0zZmViNGFjZjc4ODEiLCJpZCI6ODU0MjMsImlhdCI6MTY0Njk4ODA1NX0.4-plF_5ZfEMMpHqJyefkDCFC8JWkFw39s3yKVcNg55c";
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI4YTBhZWQ4YS0wMmUwLTQ2MzQtOTZhZi02MjFlMGZhZTc4ZjkiLCJpZCI6NTY0MiwiaWF0IjoxNjYzNTc2NDA0fQ.K5AYUXPpxSFtkrmq0smhck8KlwxDsUKZjvZA_rldn2k";
   Cesium.Camera.DEFAULT_VIEW_RECTANGLE = Cesium.Rectangle.fromDegrees(
     100,
     30,
@@ -64,10 +64,11 @@ onMounted(() => {
     selectionIndicator: false, //是否显示选取指示器组件
     timeline: false, //是否显示时间轴
     animation: false, //是否创建动画小器件，左下角仪表
-    terrainProvider: Cesium.createWorldTerrain()
+    // terrainProvider: Cesium.createWorldTerrain()
   });
 
   viewer.scene.fog.enabled = false
+  viewer.scene.globe.depthTestAgainstTerrain=true;
 
   gm = new GraphManager(viewer, {
     layerId: "testbh1",
@@ -235,6 +236,14 @@ function toggleProp(a,b,c) {
 </script>
 
 <style>
+html,body{
+  margin:0px;
+  padding:0px;
+}
+#mapContainer{
+  width:100%;
+  height:100vh;
+}
 .tbt {
   border: 1px solid blue;
   background: transparent;

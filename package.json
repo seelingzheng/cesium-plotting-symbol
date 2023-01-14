@@ -32,11 +32,13 @@
     "@turf/turf": "^6.5.0",
     "@types/lodash": "^4.14.185",
     "bezier-js": "^6.1.0",
+    "browserify-zlib": "^0.2.0",
     "cesium": "^1.97.0",
     "file-saver": "^2.0.5",
     "keyboardjs": "^2.7.0",
     "lodash": "^4.17.21",
-    "vue": "^3.2.39"
+    "vue": "^3.2.39",
+    "zlib": "^1.0.5"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.1.0",
